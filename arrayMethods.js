@@ -4,7 +4,7 @@
     storing the results of your function calls.
 */
 
-////////// PROBLEM 1 //////////
+////////// PROBLEM 1 ///////////
 
 // Do not edit the code below.
 const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
@@ -12,13 +12,26 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 
 /*
   Use the filter method on mixedNumbers to make a new array of just the even numbers.
+
   The filter function takes a callback with the parameters
   function(element, index, wholeArray){}  Function Form
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
 // CODE HERE
-const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+
+const evenNumbers = mixedNumbers.filter(function(num){      //Example of Function Form
+  return num % 2 === 0
+})
+
+
+const evenNumbers = mixedNumbers.filter(num => num % 2 === 0)  //Example of Arrow function
+
+
+
+
+
+//const evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
 
 
 
@@ -43,6 +56,17 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 // CODE HERE
 const postTaxPrices // = prices.map(/* Provide Your Callback Here );
 
+const postTaxPrices = prices.map(function(elem) {            // example of Function Form
+  return elem * 1.07
+})
+
+
+
+const postTaxPrices = prices.map(num +> num * 1.07)         // example of Arrow Form
+
+
+
+
 
 
 ////////// PROBLEM 3 //////////
@@ -60,6 +84,17 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 
 // CODE HERE
 const totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+
+const totalPopulation = populations.reduce(function(acc, elem) {   //example of function form
+  return acc + elem
+})
+
+
+const totalPopulation = populations.reduce((a, c) => a + c) //arrow function
+
+
+
+
 
 
 
@@ -86,6 +121,22 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 // CODE HERE
 const myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
+const myStrongest = monstersInYourPcoket.filter(function(elem) { //function form, will filter anything out less than 200
+  return elem.CP > 200
+})
+
+const myStrongest = monstersInYourPocket.filter(monster => monster.cp > 200)
+
+
+
+
+
+
+
+
+
+
+
 
 
 ////////// PROBLEM 5 //////////
@@ -102,6 +153,15 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
+const orderTotals = orders.map(function(elem) {
+  return elem.price + (elem.price *elem.tax)
+})
+
+const orderTotals = orders.map(map => orderTotals.price + (order.price * order.tax)) //arrow function
+
+
+
+
 
 
 
@@ -122,3 +182,13 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+const purchaseTotals = purchases.filter(function(elm) {
+  return elem.owner === "Bob"
+}).reduce(function(acc,elem) {
+  return acc + elem.price
+}, 0)
+
+const purchaseTotals = purchases.filter(purchase => purchase.owner === "Bob")
+.reduce((a,c) => a + c.price, 0) // arrow function form
+
+
