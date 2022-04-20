@@ -130,7 +130,7 @@ const uniq = (arr, cb) => {
 */
 
 // CODE HERE
-
+uniq(names, uniqArr => console.log(`The new names array with all the duplicate items removed is ${uniqArr}`))
 
 
 ////////// PROBLEM 6 //////////
@@ -141,6 +141,8 @@ const uniq = (arr, cb) => {
 */
 
 // CODE HERE 
+each(names, (item, index) => `The item at index ${index} is ${item}.`)
+
 
 
 /*
