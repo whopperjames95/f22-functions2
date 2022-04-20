@@ -7,6 +7,8 @@
 
 // CODE HERE
 
+const multiply = (num1, num2, cb) => cb(num1 * num2)
+
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -36,7 +38,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const first = (arr, cb) => cb(arr[0])
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -56,7 +58,7 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
-
+const last = (arr, cb) => cb(arr[arr.length - 1])
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -78,7 +80,13 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE 
-
+const contains = (arr, name, cb) => {              //arr means array, cb means callback, (arr, name, cb are the 3 parameters)
+  if(arr.includes(name) === true) {               // have to do if & else statement to make sure if name exists in the arr
+    cb(true)
+  } else {
+    cb(false)
+  }
+}
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
@@ -103,6 +111,16 @@ var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan']
 */
 
 // CODE HERE
+
+const uniq = (arr, cb) => {
+  for (let i = 0; i + 1; x < arr.length; x++) {
+    if (arr[i] === arr[x]) {
+      arr.splice(x, 1)
+      x--
+    }
+  }
+  cb(arr)
+}
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
